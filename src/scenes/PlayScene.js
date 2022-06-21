@@ -15,6 +15,7 @@ class PlayScene extends BaseScene {
   this.score = 0;
   this.scoreText = "";
 
+  //   currently set to easy
   this.currentDifficulty = "easy";
   // *This is the difficulty setting
   this.difficulties = {
@@ -101,10 +102,14 @@ class PlayScene extends BaseScene {
    .sprite(this.config.startPosition.x, this.config.startPosition.y, "bird")
    .setScale(2)
    .setOrigin(0);
-  // I don't need to flip the "sprite"  because it already faces the right direction
+  // I don't need to flip the "sprite" because it already faces the right direction
   // .setFlip(true)
+  // width & height of sprite do not need to be changed
   this.bird.setBodySize(this.bird.width, this.bird.height);
+  // The gravity for this sprite
+  // Will increase while falling
   this.bird.body.gravity.y = 800;
+  // Sets whether this Body collides with the world boundary
   this.bird.setCollideWorldBounds(true);
  }
 
@@ -163,9 +168,7 @@ class PlayScene extends BaseScene {
  handleInputs() {
   this.input.on("pointerdown", this.flap, this);
 
-  this.input.keyboard.on("keydown_SPACE", this.flap, this);
-  // bird.body.velocity.x = VELOCITY;
-  // 300px per second
+  this.input.keyboard.on("keydown-SPACE", this.flap, this);
  }
  // *! GAMEOVER & Restart
  checkGameStatus() {
@@ -180,7 +183,7 @@ class PlayScene extends BaseScene {
  // when bird touches top and bottom of canvas
  gameOver() {
   this.physics.pause();
-  this.bird.setTint(0x65143b);
+  this.bird.setTint(0xDC143C);
   this.saveBestScore();
 
   this.time.addEvent({
@@ -244,6 +247,7 @@ class PlayScene extends BaseScene {
   });
  }
 
+ //  when the "score" reaches a certain amount, the difficulty will change
  increaseDifficulty() {
   if (this.score === 4) {
    this.currentDifficulty = "normal";
