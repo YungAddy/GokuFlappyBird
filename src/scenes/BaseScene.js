@@ -25,9 +25,10 @@ class BaseScene extends Phaser.Scene {
 			});
 		}
 	}
-
+	// This funciton is imported/called into "Preload"
 	createBG() {
-		// x + y + key of image
+		// x + ,y + ,key of "image"/ "key"
+		// Provide "middle quardinates" (width & height / 2)
 		this.add.image(400, 300, "sky");
 	}
 
@@ -45,4 +46,5 @@ class BaseScene extends Phaser.Scene {
 	}
 }
 
+// Functions from this scene/file is called into each scene except Prel
 export default BaseScene;
