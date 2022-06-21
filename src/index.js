@@ -23,12 +23,12 @@ const createScene = (Scene) => new Scene(SHARED_CONFIG);
 const initScenes = () => Scenes.map(createScene);
 
 const config = {
-	// WebGL (Web graphics library) JS Api for rendering 2D & 3D graphics
+	// Default Renderer: WebGL
 	type: Phaser.AUTO,
 	...SHARED_CONFIG,
 	pixelArt: true,
 	physics: {
-		// arcade physics plugin, manages simulation
+		// arcade physics plugin, manages physics simulation
 		default: "arcade",
 		arcade: {
 			debug: true,
@@ -50,4 +50,5 @@ const initalBirdPosition = { x: config.width / 10, y: config.height / 2 };
 let bird = null;
 let pipes = null;
 
+// Creates game, pass through configurations
 new Phaser.Game(config);
