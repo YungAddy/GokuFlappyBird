@@ -5,6 +5,8 @@ import MenuScene from "./scenes/MenuScene";
 import ScoreScene from "./scenes/ScoreScene";
 import PauseScene from "./scenes/PauseScene";
 
+// ! npm run dev starts localhost:8080
+// npm run build makes build folder
 const WIDTH = 800;
 const HEIGHT = 600;
 const BIRD_POSITION = { x: WIDTH / 10, y: HEIGHT / 2 };
