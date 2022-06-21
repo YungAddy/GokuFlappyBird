@@ -35,7 +35,7 @@ const config = {
   // arcade physics plugin, manages physics simulation
   default: "arcade",
   arcade: {
-   debug: true,
+   debug: false,
    // gravity: { y:400 }
   },
  },
