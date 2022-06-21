@@ -35,9 +35,10 @@ const config = {
   // arcade physics plugin, manages physics simulation
   default: "arcade",
   arcade: {
-	// boolean value true or false
+   // boolean value true or false
    debug: false,
    // gravity: { y:400 }
+   // "bird" has it's own gravity
   },
  },
  scene: initScenes(),

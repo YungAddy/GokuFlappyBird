@@ -166,6 +166,7 @@ class PlayScene extends BaseScene {
  }
  // * Flap with SpaceBar and Click
  handleInputs() {
+    // "on" listens for events
   this.input.on("pointerdown", this.flap, this);
 
   this.input.keyboard.on("keydown-SPACE", this.flap, this);
